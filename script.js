@@ -54,85 +54,113 @@ let characterCard = async () => {
     shuffleArray(array2)
     console.log(array2)
 
-    let names1 = response.data[0].name
+    let names1 = array2[0].name
     gameContainer1.textContent = names1
-    let pics1 = response.data[0].image
+    let pics1 = array2[0].image
     picContainer1.setAttribute ('src', pics1)
 
-
-    let names2 = response.data[1].name
+    let names2 = array2[1].name
     gameContainer2.textContent = (names2)
-    let pics2 = response.data[1].image
+    let pics2 = array2[1].image
     picContainer2.setAttribute ('src', pics2)
 
-    let names3 = response.data[2].name
+    let names3 = array2[2].name
     gameContainer3.textContent = (names3)
-    let pics3 = response.data[2].image
+    let pics3 = array2[2].image
     picContainer3.setAttribute ('src', pics3)
 
-    let names4 = response.data[3].name
+    let names4 = array2[3].name
     gameContainer4.textContent = (names4)
-    let pics4 = response.data[3].image
+    let pics4 = array2[3].image
     picContainer4.setAttribute ('src', pics4)
 
-    let names5 = response.data[4].name
+    let names5 = array2[4].name
     gameContainer5.textContent = (names5)
-    let pics5 = response.data[4].image
+    let pics5 = array2[4].image
     picContainer5.setAttribute ('src', pics5)
 
 
-    let names6 = response.data[5].name
+    let names6 = array2[5].name
     gameContainer6.textContent = (names6)
-    let pics6 = response.data[5].image
+    let pics6 = array2[5].image
     picContainer6.setAttribute ('src', pics6)
 
 
-    let names7 = response.data[6].name
+    let names7 = array2[6].name
     gameContainer7.textContent = (names7)
-    let pics7 = response.data[6].image
+    let pics7 = array2[6].image
     picContainer7.setAttribute ('src', pics7)
 
-    let names8 = response.data[7].name
+    let names8 = array2[7].name
     gameContainer8.textContent = (names8)
-    let pics8 = response.data[7].image
+    let pics8 = array2[7].image
     picContainer8.setAttribute ('src', pics8)
 
 
-    let names9 = response.data[8].name
+    let names9 = array2[8].name
     gameContainer9.textContent = (names9)
-    let pics9 = response.data[8].image
+    let pics9 = array2[8].image
     picContainer9.setAttribute ('src', pics9)
 
-
-    let names10 = response.data[9].name
+    let names10 = array2[9].name
     gameContainer10.textContent = (names10)
-    let pics10 = response.data[9].image
+    let pics10 = array2[9].image
     picContainer10.setAttribute ('src', pics10)
 
-    let names11 = response.data[10].name
+
+    let names11 = array2[10].name
     gameContainer11.textContent = (names11)
-    let pics11 = response.data[10].image
+    let pics11 = array2[10].image
     picContainer11.setAttribute ('src', pics11)
+    
 
-    let names12 = response.data[11].name
+    let names12 = array2[11].name
     gameContainer12.textContent = (names12)
-    let names13 = response.data[12].name
-    gameContainer13.textContent = (names13)
-    let names14 = response.data[13].name
-    gameContainer14.textContent = (names14)
-    let names15 = response.data[14].name
-    gameContainer15.textContent = (names15)
-    let names16 = response.data[15].name
-    gameContainer16.textContent = (names16)
-    let names17 = response.data[16].name
-    gameContainer17.textContent = (names17)
-    let names18 = response.data[17].name
-    gameContainer18.textContent = (names18)
-    let names19 = response.data[18].name
-    gameContainer19.textContent = (names19)
-    let names20 = response.data[19].name
-    gameContainer20.textContent = (names20)
+    let pics12 = array2[11].image
+    picContainer12.setAttribute ('src', pics12)
 
+    let names13 = array2[12].name
+    gameContainer13.textContent = (names13)
+    let pics13 = array2[12].image
+    picContainer13.setAttribute ('src', pics13)
+
+    let names14 = array2[13].name
+    gameContainer14.textContent = (names14)
+    let pics14 = array2[13].image
+    picContainer14.setAttribute ('src', pics14)
+
+
+    let names15 = array2[14].name
+    gameContainer15.textContent = (names15)
+    let pics15 = array2[14].image
+    picContainer15.setAttribute ('src', pics15)
+
+    let names16 = array2[15].name
+    gameContainer16.textContent = (names16)
+    let pics16 = array2[15].image
+    picContainer16.setAttribute ('src', pics16)
+
+
+    let names17 = array2[16].name
+    gameContainer17.textContent = (names17)
+    let pics17 = array2[16].image
+    picContainer17.setAttribute ('src', pics17)
+
+
+    let names18 = array2[17].name
+    gameContainer18.textContent = (names18)
+    let pics18 = array2[17].image
+    picContainer18.setAttribute ('src', pics18)
+
+    let names19 = array2[18].name
+    gameContainer19.textContent = (names19)
+    let pics19 = array2[18].image
+    picContainer19.setAttribute ('src', pics19)
+
+    let names20 = array2[19].name
+    gameContainer20.textContent = (names20)
+    let pics20 = array2[19].image
+    picContainer20.setAttribute ('src', pics20)
     
 } 
 characterCard()

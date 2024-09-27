@@ -1,0 +1,23 @@
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(5, 300px);
+    grid-gap: 10px;
+}
+.image {
+    display:absolute;
+    width: 150px;
+    padding-left: 20%;
+    padding-top: 15%
+}
+.name {
+    display: absolute;
+    padding-left: 25%;
+    padding-top: 20%;
+}
+.card {
+    width: 250px;
+    font-family: "Space Mono";
+    box-shadow: 0 3px 3px 3px;
+}
