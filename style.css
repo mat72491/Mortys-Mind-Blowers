@@ -12,12 +12,19 @@
     padding-top: 15%
 }
 .name {
-    display: absolute;
-    padding-left: 25%;
-    padding-top: 20%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+    font-family: "Space Mono";
+    font-size: 20px;
+    box-shadow: 0 3px 3px 3px;
+    background-color: lime;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 .card {
     width: 250px;
-    font-family: "Space Mono";
     box-shadow: 0 3px 3px 3px;
+    background-color: black;
+    border-radius: 20px;
 }
