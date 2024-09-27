@@ -22,6 +22,28 @@ const gameContainer18 = document.querySelector('#gameContainer18')
 const gameContainer19 = document.querySelector('#gameContainer19')
 const gameContainer20 = document.querySelector('#gameContainer20')
 
+const picContainer1 = document.querySelector('#picContainer1')
+const picContainer2 = document.querySelector('#picContainer2')
+const picContainer3 = document.querySelector('#picContainer3')
+const picContainer4 = document.querySelector('#picContainer4')
+const picContainer5 = document.querySelector('#picContainer5')
+const picContainer6 = document.querySelector('#picContainer6')
+const picContainer7 = document.querySelector('#picContainer7')
+const picContainer8 = document.querySelector('#picContainer8')
+const picContainer9 = document.querySelector('#picContainer9')
+const picContainer10 = document.querySelector('#picContainer10')
+const picContainer11 = document.querySelector('#picContainer11')
+const picContainer12 = document.querySelector('#picContainer12')
+const picContainer13 = document.querySelector('#picContainer13')
+const picContainer14 = document.querySelector('#picContainer14')
+const picContainer15 = document.querySelector('#picContainer15')
+const picContainer16 = document.querySelector('#picContainer16')
+const picContainer17 = document.querySelector('#picContainer17')
+const picContainer18 = document.querySelector('#picContainer18')
+const picContainer19 = document.querySelector('#picContainer19')
+const picContainer20 = document.querySelector('#picContainer20')
+
+
 let array1 = [] 
 let array2 = []
 
@@ -34,26 +56,64 @@ let characterCard = async () => {
 
     let names1 = response.data[0].name
     gameContainer1.textContent = names1
+    let pics1 = response.data[0].image
+    picContainer1.setAttribute ('src', pics1)
+
+
     let names2 = response.data[1].name
     gameContainer2.textContent = (names2)
+    let pics2 = response.data[1].image
+    picContainer2.setAttribute ('src', pics2)
+
     let names3 = response.data[2].name
     gameContainer3.textContent = (names3)
+    let pics3 = response.data[2].image
+    picContainer3.setAttribute ('src', pics3)
+
     let names4 = response.data[3].name
     gameContainer4.textContent = (names4)
+    let pics4 = response.data[3].image
+    picContainer4.setAttribute ('src', pics4)
+
     let names5 = response.data[4].name
     gameContainer5.textContent = (names5)
+    let pics5 = response.data[4].image
+    picContainer5.setAttribute ('src', pics5)
+
+
     let names6 = response.data[5].name
     gameContainer6.textContent = (names6)
+    let pics6 = response.data[5].image
+    picContainer6.setAttribute ('src', pics6)
+
+
     let names7 = response.data[6].name
     gameContainer7.textContent = (names7)
+    let pics7 = response.data[6].image
+    picContainer7.setAttribute ('src', pics7)
+
     let names8 = response.data[7].name
     gameContainer8.textContent = (names8)
+    let pics8 = response.data[7].image
+    picContainer8.setAttribute ('src', pics8)
+
+
     let names9 = response.data[8].name
     gameContainer9.textContent = (names9)
+    let pics9 = response.data[8].image
+    picContainer9.setAttribute ('src', pics9)
+
+
     let names10 = response.data[9].name
     gameContainer10.textContent = (names10)
+    let pics10 = response.data[9].image
+    picContainer10.setAttribute ('src', pics10)
+
     let names11 = response.data[10].name
     gameContainer11.textContent = (names11)
+    let pics11 = response.data[10].image
+    picContainer11.setAttribute ('src', pics11)
+
     let names12 = response.data[11].name
     gameContainer12.textContent = (names12)
     let names13 = response.data[12].name
@@ -72,6 +132,8 @@ let characterCard = async () => {
     gameContainer19.textContent = (names19)
     let names20 = response.data[19].name
     gameContainer20.textContent = (names20)
+
+    
 } 
 characterCard()
 
