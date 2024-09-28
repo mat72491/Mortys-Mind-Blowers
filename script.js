@@ -1,5 +1,5 @@
 
-let id = Array.from({length: 10}, () => Math.floor(Math.random() * 826)) //generates a random array of 10 numbers 1-826.  Crediting Sara Searson for her guidance on this.
+let id = Array.from({length: 10}, () => Math.floor(Math.random() * 826)) //generates a random array of 10 numbers 1-826.  Crediting Sara Searson for her guidance.
 
 const gameContainer1 = document.querySelector('#gameContainer1')
 const gameContainer2 = document.querySelector('#gameContainer2')
@@ -42,7 +42,6 @@ const picContainer17 = document.querySelector('#picContainer17')
 const picContainer18 = document.querySelector('#picContainer18')
 const picContainer19 = document.querySelector('#picContainer19')
 const picContainer20 = document.querySelector('#picContainer20')
-
 
 let array1 = [] 
 let array2 = []
@@ -167,12 +166,18 @@ characterCard()
 
 function shuffleArray(array2) {
     for (let i = array2.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1)); 
-        [array2[i], array2[j]] = [array2[j], array2[i]] 
+        let j = Math.floor(Math.random() * (i + 1)); //gives random number from 0-20 since the array is 20 elements long
+        [array2[i], array2[j]] = [array2[j], array2[i]] //j is a random number between 0-20 (line 20). line 21 is saying that as array2 iterates through [i], javascript will swap the position of array2[i] with the position of array3[j]. Crediting Kevin Pham for his help with this and his explanation.
     }    
 } 
 
+const restartButton = document.querySelector('#restartButton')
 
-//gives random number from 0-20 since the array is 20 elements long
-//j is a random number between 0-20 (line 20). line 21 is saying that as array2 iterates through [i], javascript will swap the position of array2[i] with the position of array3[j]. Crediting Kevin Pham for his help with this and his explanation.
+restartButton.addEventListener('onClick', restartGame)
+
+function restartGame(){
+    shuffleArray(array2)
+}
+
+
 
