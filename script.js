@@ -167,7 +167,7 @@ characterCard()
 function shuffleArray(array2) {
     for (let i = array2.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1)); //gives random number from 0-20 since the array is 20 elements long
-        [array2[i], array2[j]] = [array2[j], array2[i]] //j is a random number between 0-20 (line 20). line 21 is saying that as array2 iterates through [i], javascript will swap the position of array2[i] with the position of array3[j]. Crediting Kevin Pham for his help with this and his explanation.
+        [array2[i], array2[j]] = [array2[j], array2[i]] //j is a random number between 0-20. as array2 iterates through [i], javascript will swap the position of array2[i] with the position of array3[j]. Crediting Kevin Pham for his help with this and his explanation.
     }    
 } 
 

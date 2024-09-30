@@ -7,7 +7,9 @@ background: black;
 border-radius: 50%;
 display: flex;
 justify-content: center;
+text-align: center;
 }
+
 @font-face {
     font-family: "WubbaLubbaDubDub";
     src: url("WubbaLubbaDubDub/WubbaLubbaDubDub.ttf");
@@ -34,37 +36,51 @@ justify-content: center;
 #gameBoard {
     display: grid;
     width: 100%;
+    height: 100%;
     grid-template-columns: repeat(5, 300px);
-    grid-template-rows: repeat(4, 300px);
+    grid-template-rows: repeat(4, 450px);
     grid-gap: 300px;
-    margin-left: 5%
+    padding:10px;
 }
-.image {
-    display:absolute;
-    width: 150px;
-    padding-left: 20%;
-    padding-top: 15%
-}
-.name {
-    display: flex;
-    justify-content: center;
-    padding-top: 10%;
-    font-family: "Space Mono";
-    font-size: 20px;
-    box-shadow: 0 3px 3px 3px;
-    background-color: lime;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-}
+
 .card {
-    width: 250px;
     box-shadow: 0 3px 3px 3px;
     background-color: black;
     border-radius: 20px;
 }
-.front {
-    background-position: center;
-    overflow: hidden;
+
+.front, .back{
+    position: absolute;
+    width: 300px;
+    height: 450px;
+    border-radius: 20px
+}
+
+.front img{
+    z-index: -1;
+    width: 300px;
+    height: 450px;
+    border-radius: 20px;
+}
+
+.back{
     z-index: 1;
-    width: 250px;
+    background-color: black;
+}
+
+.back img{
+    width:200px;
+    height: 200px;
+    display: absolute;
+    margin-left: 17%;
+    margin-top: 45%;
+    border-radius:20px;
+
+}
+
+.back .name{
+    background-color: lime;
+    z-index: 1;
+    font-family: "Space Mono";
+    
 }
