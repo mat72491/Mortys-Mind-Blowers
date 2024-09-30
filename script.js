@@ -173,7 +173,7 @@ function shuffleArray(array2) {
 
 const restartButton = document.querySelector('#restartButton')
 
-restartButton.addEventListener('onClick', restartGame)
+restartButton.addEventListener('onClick', restartGame())
 
 function restartGame(){
     shuffleArray(array2)
