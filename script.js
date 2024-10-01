@@ -43,11 +43,6 @@ const picContainer18 = document.querySelector('#picContainer18')
 const picContainer19 = document.querySelector('#picContainer19')
 const picContainer20 = document.querySelector('#picContainer20')
 
-let firstPick;
-let secondPick;
-
-const isPaused = false
-
 let array1 = [] 
 let array2 = []
 
@@ -181,16 +176,29 @@ const front = document.querySelectorAll(".front")
 front.forEach(card => {
     card.addEventListener('click', () => {
         card.style.zIndex = -1
+        card.classList.toggle('flipped')
         console.log(card.style.zIndex)})
         card.style.zIndex = 1
 })
 
-function openCards () {
-    front.style.zIndex === -1
+let openCardArray = [firstCard, secondCard]
+let firstCard 
+let secondCard
+let pauseGame = false
+
+function flipCard(){
+    if (classList === 'flipped') {
+    firstCard = this}
+    if (!firstCard) {
+        firstCard = this}
+        secondCard = this;
+        score++
+        document.querySelector(".score").textContent = score;
+        pauseGame = true;
+        checkMatch()
     }
 
-
-
+    let isMatch = firstCard.response.data.name === secondCard.response.data.name
 
 
 
