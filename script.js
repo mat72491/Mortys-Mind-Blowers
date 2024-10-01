@@ -43,7 +43,10 @@ const picContainer18 = document.querySelector('#picContainer18')
 const picContainer19 = document.querySelector('#picContainer19')
 const picContainer20 = document.querySelector('#picContainer20')
 
+let firstPick;
+let secondPick;
 
+const isPaused = false
 
 let array1 = [] 
 let array2 = []
@@ -181,6 +184,13 @@ front.forEach(card => {
         console.log(card.style.zIndex)})
         card.style.zIndex = 1
 })
+
+function openCards () {
+    front.style.zIndex === -1
+    }
+
+
+
 
 
 
