@@ -173,13 +173,20 @@ function shuffleArray(array2) {
     }    
 } 
 
+const front = document.querySelectorAll(".front")
 
-const card1 = document.getElementById("#card1")
+front.forEach(card => {
+    card.addEventListener('click', () => {
+        card.style.zIndex = -1
+        console.log(card.style.zIndex)})
+        card.style.zIndex = 1
+})
 
-card1.addEventListener('click', flipCard)
 
-function flipCard(){
-    document.getElementById("#card1").style.zIndex = 1
-}
-flipCard
+
+
+
+
+
+
 

@@ -98,7 +98,6 @@ h2 {
 }
 
 .back{
-    z-index: -1;
     background-color: aqua;
 }
 
@@ -210,7 +209,7 @@ h2 {
         height: 150px;
         border-radius: 20px
     }
-    
+
     .front img{
         width: 100px;
         height: 150px;
@@ -218,7 +217,6 @@ h2 {
     }
     
     .back{
-        z-index: -1;
         background-color: aqua;
     }
     .back img{
@@ -339,7 +337,6 @@ h2 {
         }
         
         .back{
-            z-index: -1;
             background-color: aqua;
         }
         
