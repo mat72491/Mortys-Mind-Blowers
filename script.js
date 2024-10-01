@@ -1,5 +1,5 @@
 
-let id = Array.from({length: 10}, () => Math.floor(Math.random() * 826)) //generates a random array of 10 numbers 1-826.  Crediting Sara Searson for her guidance.
+let id = Array.from({length: 10}, () => Math.floor(Math.random() * 826)) //generates a random array of 10 numbers 1-826
 
 const gameContainer1 = document.querySelector('#gameContainer1')
 const gameContainer2 = document.querySelector('#gameContainer2')
@@ -42,6 +42,8 @@ const picContainer17 = document.querySelector('#picContainer17')
 const picContainer18 = document.querySelector('#picContainer18')
 const picContainer19 = document.querySelector('#picContainer19')
 const picContainer20 = document.querySelector('#picContainer20')
+
+
 
 let array1 = [] 
 let array2 = []
@@ -167,17 +169,17 @@ characterCard()
 function shuffleArray(array2) {
     for (let i = array2.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1)); //gives random number from 0-20 since the array is 20 elements long
-        [array2[i], array2[j]] = [array2[j], array2[i]] //j is a random number between 0-20. as array2 iterates through [i], javascript will swap the position of array2[i] with the position of array3[j]. Crediting Kevin Pham for his help with this and his explanation.
+        [array2[i], array2[j]] = [array2[j], array2[i]] //j is a random number between 0-20. as array2 iterates through [i], javascript will swap the position of array2[i] with the position of array3[j]. Crediting Kevin Pham.
     }    
 } 
 
-const restartButton = document.querySelector('#restartButton')
 
-restartButton.addEventListener('onClick', restartGame())
+const card1 = document.getElementById("#card1")
 
-function restartGame(){
-    shuffleArray(array2)
+card1.addEventListener('click', flipCard)
+
+function flipCard(){
+    document.getElementById("#card1").style.zIndex = 1
 }
-
-
+flipCard
 

@@ -72,17 +72,23 @@ h2 {
     box-shadow: 0 3px 3px 3px;
     background-color: black;
     border-radius: 20px;
+    transform-style: preserve-3d;
+    transition: all .8s ease;
 }
 
 .card:hover{
     cursor:pointer;
 }
 
+.flipCard {
+    transform: rotateY(180deg)
+}
+
 .front, .back{
     position: absolute;
     width: 150px;
     height: 225px;
-    border-radius: 20px
+    border-radius: 20px;
 }
 
 .front img{
@@ -108,7 +114,6 @@ h2 {
 
 .back .name{
     background-color: lime;
-    z-index: 1;
     font-family: "Space Mono";
     display:flex;
     justify-content: center;
@@ -191,10 +196,12 @@ h2 {
         box-shadow: 0 3px 3px 3px;
         background-color: black;
         border-radius: 20px;
+       
     }
-    
+
     .card:hover{
         cursor:pointer;
+  
     }
     
     .front, .back{
@@ -214,7 +221,6 @@ h2 {
         z-index: -1;
         background-color: aqua;
     }
-    
     .back img{
         width: 75px;
         height: 75px;
@@ -227,13 +233,12 @@ h2 {
     
     .back .name{
         background-color: lime;
-        z-index: 1;
         font-family: "Space Mono";
         display:flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        font-size: 10px;
+        font-size: 8px;
         height: 40px;
         border-top-right-radius: 20px;
         border-top-left-radius: 20px;
@@ -316,6 +321,10 @@ h2 {
             cursor:pointer;
         }
         
+        .card.is-flipped .back {
+            transform: rotateY(180deg)
+        }
+
         .front, .back{
             position: absolute;
             width: 75px;
@@ -346,7 +355,6 @@ h2 {
         
         .back .name{
             background-color: lime;
-            z-index: 1;
             font-family: "Space Mono";
             display:flex;
             justify-content: center;
