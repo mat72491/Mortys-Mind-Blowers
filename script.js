@@ -172,25 +172,28 @@ function shuffleArray(array2) {
 } 
 
 const back = document.querySelectorAll(".back")
+let openCardArray = []
 
 back.forEach(card => {
     card.addEventListener('click', (e) => {
-        console.log(e.target)
-        card.style.opacity = 1
-        card.classList.toggle('flipped')
-        console.log(card.style.opacity)})
-        card.style.opacity = 0
-        
-})
+        handleClick(e, card)
+    }
+)})
 
-let openCardArray = []
-let firstCard 
-let secondCard
-let pauseGame = false
-let cardCounter = 0
+function handleClick (e, card){
+   
+console.log(e.target)
+card.style.opacity = 1
+card.classList.toggle('flipped')
+console.log(card.style.opacity)
+if (e) {
+    openCardArray.push(e.target.src)
+    console.log(openCardArray)
+} 
+}
 
     function checkMatch(){
-    let isMatch = e.target[0] === e.target[1]
+    let isMatch = openCardArray[0] === openCardArray[1]
     isMatch ? disableCards() : unflipCards ()
     }
 

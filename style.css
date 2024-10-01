@@ -218,6 +218,7 @@ h2 {
     
     .back{
         background-color: aqua;
+        opacity: 0;
     }
     .back img{
         width: 75px;
@@ -338,6 +339,7 @@ h2 {
         
         .back{
             background-color: aqua;
+            opacity: .5;
         }
         
         .back img{
