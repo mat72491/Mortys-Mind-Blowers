@@ -179,10 +179,9 @@ let card2 = openCardArray[1]
 let flipped = document.getElementsByClassName(".flipped")
 let scorePlayer1 = 0
 let scorePlayer2 = 0
-const createUndoCounter = () => {
-    let history = []
-    let position = 0
-}
+let matchedCards = []
+let playCount = 0
+
 back.forEach(card => {
     card.addEventListener('click', (e) => {
         handleClick(e, card)
@@ -204,7 +203,9 @@ function handleClick (e, card){
     
     if (flipped = true && openCardArray[0] === openCardArray[1] && openCardArray.length % 2 === 0){
         console.log("match")
-        openCardArray.splice(0,openCardArray.length)
+        matchedCards.push(openCardArray)
+        openCardArray.shift(0,1)
+        console.log(matchedCards)
     } 
     
     else if (flipped = true && openCardArray[0] !== openCardArray[1] && openCardArray.length % 2 === 0){
