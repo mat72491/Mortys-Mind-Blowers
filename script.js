@@ -1,4 +1,6 @@
-
+const back = document.querySelectorAll(".back")
+const cardName = document.querySelectorAll(".name")
+const cardImage = document.querySelectorAll(".backImage")
 let id = Array.from({length: 10}, () => Math.floor(Math.random() * 826)) //generates a random array of 10 numbers 1-826
 
 const gameContainer1 = document.querySelector('#gameContainer1')
@@ -52,6 +54,12 @@ let characterCard = async () => {
     array2 = [...array1, ...array1]
     shuffleArray(array2)
     console.log(array2)
+
+    for (let i = 0; i < array2.length; i++){
+        back[i].setAttribute("data-char", array2[i].id)
+        cardName[i].setAttribute("data-char", array2[i].id)
+        cardImage[i].setAttribute("data-char", array2[i].id)
+    }
 
     let names1 = array2[0].name
     gameContainer1.textContent = names1
@@ -162,6 +170,7 @@ let characterCard = async () => {
     picContainer20.setAttribute ('src', pics20)
     
 } 
+
 characterCard()
 
 function shuffleArray(array2) {
@@ -171,7 +180,9 @@ function shuffleArray(array2) {
     }    
 } 
 
-const back = document.querySelectorAll(".back")
+
+
+
 const front = document.querySelectorAll(".front")
 const restartButton = document.getElementById("#restartButton")
 let openCardArray = []
@@ -199,21 +210,23 @@ let compareCard1 = ""
 let compareCard2 = ""
 
 function togglePlayer(){
-    console.log(openCardArray)
+    
     if (openCardArray.length > 1) {
     currentPlayer = (currentPlayer === Player1) ? Player2 : Player1
-}
+    openCardArray = []
+    }
 }
 
 back.forEach(card => {
     card.addEventListener('click', (e) => {
         handleClick(e, card)
-          console.log(card)   }
+            }
         )
     }
 )
 
 function handleClick (e, card){
+    console.log(openCardArray) 
 if (compareCard1 == "") {
     compareCard1 = card
 }   else {
@@ -222,12 +235,13 @@ if (compareCard1 == "") {
 
     card.style.opacity = 1
     card.classList.toggle('flipped')
-    if (e) {
-    openCardArray.push(e.target.src)
-    } 
+    
+        console.log(e.target.dataset.char)
+    openCardArray.push(e.target.dataset.char)
+  
     
     if (flipped = true && openCardArray[0] === openCardArray[1] && openCardArray.length % 2 === 0){
-        console.log("match")
+        
         compareCard1.classList.toggle('solved')
         compareCard2.classList.toggle('solved')
         if (currentPlayer === Player1){
@@ -237,10 +251,11 @@ if (compareCard1 == "") {
             score2 += 1
             player2score.innerHTML = score2
            }
-        openCardArray.splice(0,openCardArray.length)
+           openCardArray = []
+        // openCardArray.splice(0,openCardArray.length)
        compareCard1 = ""
        compareCard2 = ""
-       console.log(currentPlayer)
+      
        
     } 
     
@@ -251,9 +266,10 @@ if (compareCard1 == "") {
                 item.classList.remove('flipped')
             }
             }, 4000))
-            console.log(currentPlayer)
+            
             togglePlayer() 
-            openCardArray.splice(0,openCardArray.length)
+            
+            // openCardArray.splice(0,openCardArray.length)
             console.log("no match")
              compareCard1 = ""
              compareCard2 = ""
@@ -264,39 +280,6 @@ if (compareCard1 == "") {
             // console.log(currentPlayer)  
          }
 
-
-   
-  
-
-//     function checkMatch(){
-//         if (openCardArray[0] === openCardArray[1]) {
-//             console.log('match')}
-//          else if (openCardArray[0] !== openCardArray[1]) {
-//             unflipCards()
-//             console.log(openCardArray)
-//         }
-//     }
-
-   
-
-
-//     // let isMatch = openCardArray[0] === openCardArray[1]
-//     // isMatch ? disableCards() : unflipCards ()
-//     // }
-
-// // function disableCards() {
-// //     firstCard.removeEventListener('click',flipCard)
-// //     secondCard.removeEventListener("click", flipCard)
-// // }
-// // //     resetBoard()
-// // // }
-
-// // }
-// //    function resetBoard(){
-// //     firstCard = null
-// //     secondCard = null
-// //     pauseGame = false
-// //    }
 
  
 
