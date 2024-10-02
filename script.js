@@ -180,7 +180,8 @@ let flipped = document.getElementsByClassName(".flipped")
 let scorePlayer1 = 0
 let scorePlayer2 = 0
 let matchedCards = []
-let playCount = 0
+let history = []
+
 
 back.forEach(card => {
     card.addEventListener('click', (e) => {
@@ -198,28 +199,26 @@ function handleClick (e, card){
     
     if (e) {
     openCardArray.push(e.target.src)
-    console.log(openCardArray)
     } 
     
     if (flipped = true && openCardArray[0] === openCardArray[1] && openCardArray.length % 2 === 0){
         console.log("match")
         matchedCards.push(openCardArray)
         openCardArray.shift(0,1)
+        openCardArray.splice(0,openCardArray.length)
         console.log(matchedCards)
     } 
     
     else if (flipped = true && openCardArray[0] !== openCardArray[1] && openCardArray.length % 2 === 0){
-        back.forEach(card =>{
             setTimeout(() => {
             card.style.opacity = 0
             card.classList.remove('flipped')
             }, 4000)
             openCardArray.splice(0,openCardArray.length)
             console.log("no match")
+            console.log(openCardArray)
          }
-       )
     }
-}
 
 
 
