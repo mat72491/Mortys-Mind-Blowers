@@ -176,17 +176,30 @@ const front = document.querySelectorAll(".front")
 const restartButton = document.getElementById("#restartButton")
 let openCardArray = []
 let flipped = document.getElementsByClassName(".flipped")
-const score1 = document.querySelector(".player1")
-const score2 = document.querySelector(".player2")
-let scorePlayer1 = 0
-let scorePlayer2 = 0
-let matchedCards = []
-let history = []
-let currentplayer = "Player1"
 
-function playerChange (){
-    currentPlayer = (currentPlayer == "Player1") ?
-    "Player2" : "Player1"
+
+let Player1 = document.querySelector("#player1")
+let Player2 = document.querySelector("#player2")
+let currentPlayer = ""
+let player1score = document.getElementById('player1score')
+let player2score = document.getElementById('player2score')
+
+let score1 = 0
+let score2 = 0
+
+startGame()
+
+function startGame(){
+    currentPlayer = Player1
+}
+
+togglePlayer()
+console.log(togglePlayer())
+let compareCard1 = ""
+let compareCard2 = ""
+
+function togglePlayer(){
+    currentPlayer = (currentPlayer === Player1) ? Player2 : Player1
 }
 
 back.forEach(card => {
@@ -196,8 +209,6 @@ back.forEach(card => {
         )
     }
 )
-let compareCard1 = ""
-let compareCard2 = ""
 
 function handleClick (e, card){
 if (compareCard1 == "") {
@@ -207,11 +218,8 @@ if (compareCard1 == "") {
 }
     console.log(compareCard1)
     console.log(compareCard2)
-    // console.log(e.target)
-    // card.classList.toggle('solved')
     card.style.opacity = 1
     card.classList.toggle('flipped')
-    // console.log(card)
     if (e) {
     openCardArray.push(e.target.src)
     } 
@@ -223,22 +231,27 @@ if (compareCard1 == "") {
         openCardArray.splice(0,openCardArray.length)
        compareCard1 = ""
        compareCard2 = ""
+       if (currentPlayer = Player1){
+        score1 += 1
+        player1score.innerHTML = score1
+       } else if (currentPlayer = Player2){
+        score2 += 1
+        player2score.innerHTML = score2
+       }
     } 
     
     else if (flipped = true && openCardArray[0] !== openCardArray[1] && openCardArray.length % 2 === 0){
             back.forEach(item => setTimeout(() => {
-                // console.log(item)
             if (!item.classList.contains('solved')){
                 item.style.opacity = 0
                 item.classList.remove('flipped')
-                // console.log(card)
             }
             }, 4000))
             openCardArray.splice(0,openCardArray.length)
             console.log("no match")
              compareCard1 = ""
              compareCard2 = ""
-            // console.log(openCardArray)
+             togglePlayer()
          }
     }
 
