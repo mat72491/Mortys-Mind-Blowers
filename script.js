@@ -173,15 +173,21 @@ function shuffleArray(array2) {
 
 const back = document.querySelectorAll(".back")
 const front = document.querySelectorAll(".front")
+const restartButton = document.getElementById("#restartButton")
 let openCardArray = []
-let card1 = openCardArray[0]
-let card2 = openCardArray[1]
 let flipped = document.getElementsByClassName(".flipped")
+const score1 = document.querySelector(".player1")
+const score2 = document.querySelector(".player2")
 let scorePlayer1 = 0
 let scorePlayer2 = 0
 let matchedCards = []
 let history = []
+let currentplayer = "Player1"
 
+function playerChange (){
+    currentPlayer = (currentPlayer == "Player1") ?
+    "Player2" : "Player1"
+}
 
 back.forEach(card => {
     card.addEventListener('click', (e) => {
@@ -190,37 +196,55 @@ back.forEach(card => {
         )
     }
 )
+let compareCard1 = ""
+let compareCard2 = ""
 
 function handleClick (e, card){
-   
-    console.log(e.target)
+if (compareCard1 == "") {
+    compareCard1 = card
+}   else {
+    compareCard2 = card
+}
+    console.log(compareCard1)
+    console.log(compareCard2)
+    // console.log(e.target)
+    // card.classList.toggle('solved')
     card.style.opacity = 1
     card.classList.toggle('flipped')
-    
+    // console.log(card)
     if (e) {
     openCardArray.push(e.target.src)
     } 
     
     if (flipped = true && openCardArray[0] === openCardArray[1] && openCardArray.length % 2 === 0){
         console.log("match")
-        matchedCards.push(openCardArray)
-        openCardArray.shift(0,1)
+        compareCard1.classList.toggle('solved')
+        compareCard2.classList.toggle('solved')
         openCardArray.splice(0,openCardArray.length)
-        console.log(matchedCards)
+       compareCard1 = ""
+       compareCard2 = ""
     } 
     
     else if (flipped = true && openCardArray[0] !== openCardArray[1] && openCardArray.length % 2 === 0){
-            setTimeout(() => {
-            card.style.opacity = 0
-            card.classList.remove('flipped')
-            }, 4000)
+            back.forEach(item => setTimeout(() => {
+                // console.log(item)
+            if (!item.classList.contains('solved')){
+                item.style.opacity = 0
+                item.classList.remove('flipped')
+                // console.log(card)
+            }
+            }, 4000))
             openCardArray.splice(0,openCardArray.length)
             console.log("no match")
-            console.log(openCardArray)
+             compareCard1 = ""
+             compareCard2 = ""
+            // console.log(openCardArray)
          }
     }
 
 
+   
+  
 
 //     function checkMatch(){
 //         if (openCardArray[0] === openCardArray[1]) {
@@ -252,14 +276,7 @@ function handleClick (e, card){
 // //     pauseGame = false
 // //    }
 
-// //    function restart(){
-// //     resetBoard()
-// //     shuffleCards()
-// //     score = 0
-// //     document.querySelector(".score").textContent = score
-// //     gridContainer.innerHTML = ""
-// //     generateCards()
-// //    }
+ 
 
 
 
