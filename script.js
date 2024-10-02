@@ -179,29 +179,46 @@ let card2 = openCardArray[1]
 let flipped = document.getElementsByClassName(".flipped")
 let scorePlayer1 = 0
 let scorePlayer2 = 0
-
-
+const createUndoCounter = () => {
+    let history = []
+    let position = 0
+}
 back.forEach(card => {
     card.addEventListener('click', (e) => {
         handleClick(e, card)
+             }
+        )
     }
-)})
+)
 
 function handleClick (e, card){
    
     console.log(e.target)
     card.style.opacity = 1
     card.classList.toggle('flipped')
-if (e) {
+    
+    if (e) {
     openCardArray.push(e.target.src)
     console.log(openCardArray)
-    } if (flipped = true && openCardArray[0] === openCardArray[1]){
-        console.log("match") 
-    } else if (flipped = true && openCardArray[0] !== openCardArray[1] && openCardArray.length  % 0){
-        console.log("no match")
+    } 
+    
+    if (flipped = true && openCardArray[0] === openCardArray[1] && openCardArray.length % 2 === 0){
+        console.log("match")
+        openCardArray.splice(0,openCardArray.length)
+    } 
+    
+    else if (flipped = true && openCardArray[0] !== openCardArray[1] && openCardArray.length % 2 === 0){
+        back.forEach(card =>{
+            setTimeout(() => {
+            card.style.opacity = 0
+            card.classList.remove('flipped')
+            }, 4000)
+            openCardArray.splice(0,openCardArray.length)
+            console.log("no match")
+         }
+       )
     }
-   } 
-
+}
 
 
 
@@ -214,12 +231,7 @@ if (e) {
 //         }
 //     }
 
-//     function unflipCards(){
-//         openCardArray.pop()    
-//         openCardArray.shift()
-//         card1.style.opacity = 0
-//         card2.style.opacity = 0
-//     }
+   
 
 
 //     // let isMatch = openCardArray[0] === openCardArray[1]
