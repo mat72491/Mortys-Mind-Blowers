@@ -99,6 +99,7 @@ h2 {
 
 .back{
     background-color: aqua;
+    opacity: 0;
 }
 
 .back img{
@@ -339,7 +340,7 @@ h2 {
         
         .back{
             background-color: aqua;
-            opacity: .5;
+            opacity: 0;
         }
         
         .back img{

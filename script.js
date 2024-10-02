@@ -172,7 +172,14 @@ function shuffleArray(array2) {
 } 
 
 const back = document.querySelectorAll(".back")
+const front = document.querySelectorAll(".front")
 let openCardArray = []
+let card1 = openCardArray[0]
+let card2 = openCardArray[1]
+let flipped = document.getElementsByClassName(".flipped")
+let scorePlayer1 = 0
+let scorePlayer2 = 0
+
 
 back.forEach(card => {
     card.addEventListener('click', (e) => {
@@ -182,49 +189,65 @@ back.forEach(card => {
 
 function handleClick (e, card){
    
-console.log(e.target)
-card.style.opacity = 1
-card.classList.toggle('flipped')
-console.log(card.style.opacity)
+    console.log(e.target)
+    card.style.opacity = 1
+    card.classList.toggle('flipped')
 if (e) {
     openCardArray.push(e.target.src)
     console.log(openCardArray)
-} 
-}
-
-    function checkMatch(){
-    let isMatch = openCardArray[0] === openCardArray[1]
-    isMatch ? disableCards() : unflipCards ()
+    } if (flipped = true && openCardArray[0] === openCardArray[1]){
+        console.log("match") 
+    } else if (flipped = true && openCardArray[0] !== openCardArray[1] && openCardArray.length  % 0){
+        console.log("no match")
     }
+   } 
 
-// function disableCards() {
-//     firstCard.removeEventListener('click',flipCard)
-//     secondCard.removeEventListener("click", flipCard)
 
-//     resetBoard()
-// }
-// function unflipCards(){
-//     setTimeout(() => {
-//         firstCard.classList.remove("flipped")
-//         secondCard.classList.remove("flipped")
-//         resetboard()
-//      } 1000)
-//    }
 
-//    function resetBoard(){
-//     firstCard = null
-//     secondCard = null
-//     pauseGame = false
-//    }
 
-//    function restart(){
-//     resetBoard()
-//     shuffleCards()
-//     score = 0
-//     document.querySelector(".score").textContent = score
-//     gridContainer.innerHTML = ""
-//     generateCards()
-//    }
+//     function checkMatch(){
+//         if (openCardArray[0] === openCardArray[1]) {
+//             console.log('match')}
+//          else if (openCardArray[0] !== openCardArray[1]) {
+//             unflipCards()
+//             console.log(openCardArray)
+//         }
+//     }
+
+//     function unflipCards(){
+//         openCardArray.pop()    
+//         openCardArray.shift()
+//         card1.style.opacity = 0
+//         card2.style.opacity = 0
+//     }
+
+
+//     // let isMatch = openCardArray[0] === openCardArray[1]
+//     // isMatch ? disableCards() : unflipCards ()
+//     // }
+
+// // function disableCards() {
+// //     firstCard.removeEventListener('click',flipCard)
+// //     secondCard.removeEventListener("click", flipCard)
+// // }
+// // //     resetBoard()
+// // // }
+
+// // }
+// //    function resetBoard(){
+// //     firstCard = null
+// //     secondCard = null
+// //     pauseGame = false
+// //    }
+
+// //    function restart(){
+// //     resetBoard()
+// //     shuffleCards()
+// //     score = 0
+// //     document.querySelector(".score").textContent = score
+// //     gridContainer.innerHTML = ""
+// //     generateCards()
+// //    }
 
 
 
