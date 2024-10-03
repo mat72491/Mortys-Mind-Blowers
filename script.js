@@ -184,7 +184,7 @@ function shuffleArray(array2) {
 
 
 const front = document.querySelectorAll(".front")
-const restartButton = document.getElementById("#restartButton")
+const restartButton = document.getElementById("restartButton")
 let openCardArray = []
 let flipped = document.getElementsByClassName(".flipped")
 
@@ -204,17 +204,31 @@ function startGame(){
     currentPlayer = Player1
 }
 
+restartButton.addEventListener('click', restartGame)
 
+function restartGame() {
+    shuffleArray(array2)
+    currentPlayer = Player1
+    score1 = 0
+    player1score.innerHTML = score1
+    score2 = 0
+    player2score.innerHTML = score2
+    back.forEach(card => {
+        card.style.opacity = 0
+       
+    }
+   )
+}
 
 let compareCard1 = ""
 let compareCard2 = ""
 
 function togglePlayer(){
-    
+   
     if (openCardArray.length > 1) {
     currentPlayer = (currentPlayer === Player1) ? Player2 : Player1
     openCardArray = []
-    }
+   }   
 }
 
 back.forEach(card => {
@@ -277,7 +291,7 @@ if (compareCard1 == "") {
                
             }
             
-            // console.log(currentPlayer)  
+            console.log(currentPlayer)  
          }
 
 
