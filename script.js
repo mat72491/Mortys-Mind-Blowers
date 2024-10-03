@@ -55,6 +55,7 @@ let characterCard = async () => {
     shuffleArray(array2)
     console.log(array2)
 
+    //puts the event listener on the entire card (credit: Tom)
     for (let i = 0; i < array2.length; i++){
         back[i].setAttribute("data-char", array2[i].id)
         cardName[i].setAttribute("data-char", array2[i].id)
@@ -176,7 +177,7 @@ characterCard()
 function shuffleArray(array2) {
     for (let i = array2.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1)); //gives random number from 0-20 since the array is 20 elements long
-        [array2[i], array2[j]] = [array2[j], array2[i]] //j is a random number between 0-20. as array2 iterates through [i], javascript will swap the position of array2[i] with the position of array3[j]. Crediting Kevin Pham.
+        [array2[i], array2[j]] = [array2[j], array2[i]] //j is a random number between 0-20. as array2 iterates through [i], javascript will swap the position of array2[i] with the position of array3[j]. (Credit: Kevin).
     }    
 } 
 
@@ -207,7 +208,7 @@ function startGame(){
 restartButton.addEventListener('click', restartGame)
 
 function restartGame() {
-    shuffleArray(array2)
+    shuffleArray()
     currentPlayer = Player1
     score1 = 0
     player1score.innerHTML = score1
@@ -242,7 +243,7 @@ back.forEach(card => {
 function handleClick (e, card){
     console.log(openCardArray) 
 if (compareCard1 == "") {
-    compareCard1 = card
+    compareCard1 = card //creates variables for each card selected (credit: Kevin)
 }   else {
     compareCard2 = card
 }
