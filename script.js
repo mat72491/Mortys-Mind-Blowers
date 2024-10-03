@@ -1,3 +1,4 @@
+
 const back = document.querySelectorAll(".back")
 const cardName = document.querySelectorAll(".name")
 const cardImage = document.querySelectorAll(".backImage")
@@ -174,13 +175,13 @@ let characterCard = async () => {
 
 characterCard()
 
-function shuffleArray(array2) {
+function shuffleArray() {
+    let array2 = []
     for (let i = array2.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1)); //gives random number from 0-20 since the array is 20 elements long
         [array2[i], array2[j]] = [array2[j], array2[i]] //j is a random number between 0-20. as array2 iterates through [i], javascript will swap the position of array2[i] with the position of array3[j]. (Credit: Kevin).
     }    
 } 
-
 
 
 
@@ -207,8 +208,9 @@ function startGame(){
 
 restartButton.addEventListener('click', restartGame)
 
+
 function restartGame() {
-    shuffleArray()
+    location.reload()
     currentPlayer = Player1
     score1 = 0
     player1score.innerHTML = score1
@@ -216,7 +218,6 @@ function restartGame() {
     player2score.innerHTML = score2
     back.forEach(card => {
         card.style.opacity = 0
-       
     }
    )
 }
