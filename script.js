@@ -266,7 +266,6 @@ if (compareCard1 == "") {
             player2score.innerHTML = score2
            }
            openCardArray = []
-        // openCardArray.splice(0,openCardArray.length)
        compareCard1 = ""
        compareCard2 = ""
       
@@ -280,17 +279,13 @@ if (compareCard1 == "") {
                 item.classList.remove('flipped')
             }
             }, 4000))
-            
             togglePlayer() 
-            
-            // openCardArray.splice(0,openCardArray.length)
             console.log("no match")
              compareCard1 = ""
              compareCard2 = ""
              
                
             }
-            
             console.log(currentPlayer)  
          }
 
